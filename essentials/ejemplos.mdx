@@ -1,59 +1,33 @@
 ---
-title: 'Images and Embeds'
-description: 'Add image, video, and other HTML elements'
-icon: 'image'
+title: Ejemplos
+description: Ejemplos en pseudocódigo y diagramas de flujo
+sidebar_label: Cómo usarlo
+keywords: [ejemplos, pseudocódigo, diagramas]
+sidebar_position: 2
 ---
 
-<img
-  style={{ borderRadius: '0.5rem' }}
-  src="https://mintlify-assets.b-cdn.net/bigbend.jpg"
-/>
+![ejemplos](/images/ejemplos.png)
 
-## Image
+## Cómo usarlo
 
-### Using Markdown
+Genera ejemplos en pseudocódigo y diagramas de flujo que ilustran la solución del problema. Los ejemplos se adaptan automáticamente al lenguaje seleccionado.
 
-The [markdown syntax](https://www.markdownguide.org/basic-syntax/#images) lets you add images using the following code
+## Visualización dual
 
-```md
-![title](/path/image.jpg)
-```
+La interfaz muestra simultáneamente:
+- Pseudocódigo con sintaxis resaltada
+- Diagrama de flujo UML correspondiente
 
-Note that the image file size must be less than 5MB. Otherwise, we recommend hosting on a service like [Cloudinary](https://cloudinary.com/) or [S3](https://aws.amazon.com/s3/). You can then use that URL and embed.
+## Personalización
 
-### Using Embeds
+Selecciona el lenguaje deseado en el menú superior para adaptar la sintaxis de los ejemplos.
 
-To get more customizability with images, you can also use [embeds](/writing-content/embed) to add images
+## Interacción
 
-```html
-<img height="200" src="/path/image.jpg" />
-```
+- Amplía el pseudocódigo o diagrama haciendo clic sobre ellos
+- Copia el código usando el botón en la esquina superior derecha
+- Alterna entre diferentes ejemplos con los botones de navegación
 
-## Embeds and HTML elements
+## Acceso rápido
 
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/4KzFe50RQkQ"
-  title="YouTube video player"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-  style={{ width: '100%', borderRadius: '0.5rem' }}
-></iframe>
-
-<br />
-
-<Tip>
-
-Mintlify supports [HTML tags in Markdown](https://www.markdownguide.org/basic-syntax/#html). This is helpful if you prefer HTML tags to Markdown syntax, and lets you create documentation with infinite flexibility.
-
-</Tip>
-
-### iFrames
-
-Loads another HTML page within the document. Most commonly used for embedding videos.
-
-```html
-<iframe src="https://www.youtube.com/embed/4KzFe50RQkQ"> </iframe>
-```
+Presiona <kbd>cmd/ctrl</kbd> + <kbd>E</kbd> para generar un nuevo ejemplo del concepto actual.

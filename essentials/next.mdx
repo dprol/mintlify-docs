@@ -1,66 +1,36 @@
 ---
-title: 'Navigation'
-description: 'The navigation field in mint.json defines the pages that go in the navigation menu'
-icon: 'map'
+title: Próximo Paso
+description: Sugerencias para continuar el desarrollo
+sidebar_label: Cómo usarlo
+keywords: [sugerencias, desarrollo, código]
+sidebar_position: 4
 ---
 
-The navigation menu is the list of links on every website.
+![next-step](/images/NextStep.png)
 
-You will likely update `mint.json` every time you add a new page. Pages do not show up automatically.
+## Cómo usarlo
 
-## Navigation syntax
+Recibe sugerencias para el siguiente paso en tu código basadas en el contexto actual.
 
-Our navigation syntax is recursive which means you can make nested navigation groups. You don't need to include `.mdx` in page names.
+## Selección de código
 
-<CodeGroup>
+1. Selecciona el fragmento de código relevante
+2. Haz clic en "Próximo paso" en el menú de ayuda
+3. Recibe sugerencias específicas para continuar
 
-```json Regular Navigation
-"navigation": [
-    {
-        "group": "Getting Started",
-        "pages": ["quickstart"]
-    }
-]
-```
+## Contexto inteligente
 
-```json Nested Navigation
-"navigation": [
-    {
-        "group": "Getting Started",
-        "pages": [
-            "quickstart",
-            {
-                "group": "Nested Reference Pages",
-                "pages": ["nested-reference-page"]
-            }
-        ]
-    }
-]
-```
+El asistente analiza:
+- Variables y funciones definidas
+- Estructuras de control utilizadas
+- Estado actual del programa
 
-</CodeGroup>
+## Formato de sugerencias
 
-## Folders
+- Explicación del siguiente paso lógico
+- Fragmento de código con sintaxis resaltada
+- Razón detrás de la sugerencia
 
-Simply put your MDX files in folders and update the paths in `mint.json`.
+## Atajo de teclado
 
-For example, to have a page at `https://yoursite.com/your-folder/your-page` you would make a folder called `your-folder` containing an MDX file called `your-page.mdx`.
-
-<Warning>
-
-You cannot use `api` for the name of a folder unless you nest it inside another folder. Mintlify uses Next.js which reserves the top-level `api` folder for internal server calls. A folder name such as `api-reference` would be accepted.
-
-</Warning>
-
-```json Navigation With Folder
-"navigation": [
-    {
-        "group": "Group Name",
-        "pages": ["your-folder/your-page"]
-    }
-]
-```
-
-## Hidden Pages
-
-MDX files not included in `mint.json` will not show up in the sidebar but are accessible through the search bar and by linking directly to them.
+Usa <kbd>cmd/ctrl</kbd> + <kbd>N</kbd> con código seleccionado para obtener sugerencias rápidamente.
