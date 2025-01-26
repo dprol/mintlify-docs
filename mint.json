@@ -62,14 +62,6 @@
       "pages": [
         "api-reference/introduction"
       ]
-    },
-    {
-      "group": "Conceptos",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
     }
   ]
 }
