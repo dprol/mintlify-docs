@@ -43,8 +43,7 @@
       "group": "Antes de empezar",
       "pages": [
         "introduction",
-        "quickstart", 
-        "development"
+        "quickstart"
       ]
     },
     {
