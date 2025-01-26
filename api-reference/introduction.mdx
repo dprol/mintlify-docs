@@ -1,23 +1,86 @@
 ---
-
-title: Introducción
-
-description: Asistente de IA en IDE para el aprendizaje universitario de programación básica
-
+title: 'API Reference'
+description: 'Arquitectura y componentes del backend'
 ---
 
-[Buddy feature](/images/features.png)
+## Estructura
 
-Buddy es una extensión de [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=dprol.BuddyAI) que ayuda a los estudiantes a comprender mejor los problemas de programación
+El backend gestiona la lógica de negocio mediante cinco componentes principales:
 
-- [Conceptos](essentials/conceptos.mdx) para obtener explicaciones claras sobre los conceptos del problema
+<CardGroup>
+  <Card title="anthropic.js" icon="robot">
+    Gestiona las solicitudes al modelo Claude 3.5 de Anthropic
+  </Card>
+  <Card title="buddy-view-provider.js" icon="bridge">
+    Actúa como puente entre frontend y backend
+  </Card>
+  <Card title="extension.js" icon="plug">
+    Punto de entrada de la extensión
+  </Card>
+  <Card title="interface-ai.js" icon="microchip">
+    Maneja interacciones con funcionalidades de IA
+  </Card>
+  <Card title="utils.js" icon="wrench">
+    Funciones genéricas reutilizables
+  </Card>
+</CardGroup>
 
-- [Ejemplos](essentials/ejemplos.mdx) en pseudocódigo y diagramas de flujo
+## Integración con Anthropic
 
-- [Pistas para empezar](essentials/pistas.mdx) para abordar el problema
+El archivo `anthropic.js` gestiona las solicitudes mediante:
 
-- [Sugerencias](essentials/next.mdx) para el próximo paso en el desarrollo del código
+```javascript
+const queryAI = async (prompt) => {
+  try {
+    // Configuración y envío de la solicitud
+    const response = await anthropic.messages.create({
+      model: "claude-3-sonnet-20240229",
+      max_tokens: 4096,
+      messages: [{ role: "user", content: prompt }]
+    });
+    return response.content;
+  } catch (error) {
+    console.error("Error al consultar la API:", error);
+    throw error;
+  }
+};
+```
 
-- [Explicación de la solución](essentials/solucion.mdx) para entender el razonamiento detrás de la respuesta correcta
+## Controlador
 
-- [Preguntas](essentials/next.mdx) para el seguimiento del problema planteado
+El archivo `buddy-view-provider.js` funciona como controlador principal:
+
+### Funcionalidades clave
+
+- Preparación del entorno
+- Construcción de prompts
+- Interacción con API
+- Procesamiento de respuestas
+- Gestión de errores
+
+### Ejemplo de procesamiento
+
+```javascript
+async function sendApiRequestWithCode(selectedCode) {
+  try {
+    // Validar selección de código
+    if (!selectedCode) {
+      throw new Error("No hay código seleccionado");
+    }
+
+    // Construir prompt
+    const prompt = {
+      role: "user",
+      content: `Analiza este código: ${selectedCode}`
+    };
+
+    // Enviar solicitud
+    const response = await queryAI(prompt);
+    
+    // Procesar y devolver respuesta
+    return formatResponse(response);
+  } catch (error) {
+    handleError(error);
+  }
+}
+```
