@@ -1,18 +1,18 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Documentación",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/icon.png",
+    "light": "/logo/icon.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#DC1436",
+    "light": "#FF4B4B",
+    "dark": "#DC1436",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#DC1436",
+      "to": "#FF4B4B"
     }
   },
   "topbarLinks": [
@@ -75,17 +75,12 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Conceptos",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete"
       ]
     }
-  ],
-  "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
-  }
+  ]
 }
