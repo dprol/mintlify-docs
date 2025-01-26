@@ -60,12 +60,12 @@
     {
       "group": "Essentials",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "essentials/conceptos",
+        "essentials/ejemplos",
+        "essentials/pistas",
+        "essentials/sugerencias",
+        "essentials/solucion",
+        "essentials/preguntas"
       ]
     },
     {
